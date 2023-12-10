@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+
+      background: #F3F5FF;
+    }
+    p {
+      margin: 0;
+    }
+
+    .container {
+      margin-top: 150px;
+      margin-inline: auto;
+
+      width: 400px;
+
+      border-radius: 25px;
+      background-color: #fff;
+    }
+
+    .button {
+      background-color: #2A59FE;
+      color: #fff;
+
+      padding: 5px 10px;
+
+      font-size: 16px;
+      font-weight: 700;
+
+      border: none;
+      border-radius: 2.5px;
+
+      transition: opacity 500ms;
+    }
+
+    .button:hover {
+      opacity: 0.7;
+      cursor: pointer;
+    }
+
+    .button--inactive {
+      background: rgba(42, 89, 254, 0.30);
+      pointer-events: none;
+    }
+
+    .main {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .main__wrapper,
+    .results {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .results {
+      gap: 15px;
+    }
+
+    .main__label {
+      background-color: #DBDDE4;
+
+      border-radius: 5px;
+
+      padding: 5px 15px;
+
+      font-weight: 700;
+    }
+
+    .results__item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    
+    .results__label {
+      padding: 2px 5px;
+      background-color: #2A59FE;
+      border-radius: 2.5px;
+
+      color: #fff;
+    }
+
+    .results__value {
+
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <div class="main">
+      <div class="main__wrapper">
+        <label for="length" class="main__label">
+          Length
+        </label>
+        <input id="length" type="number" min="5" max="15" oninput="handleInput()">
+      </div>
+
+      <div class="main__buttons">
+        <button class="button button__submit button--inactive" onclick="hanldeSubmitBtn()">Submit</button>
+        <button class="button button__reset button--inactive" onclick="reset()">Reset</button>  
+      </div>
+
+
+      <div class="results">
+        <div class="results">
+          <div class="results__item results__lower-limit"></div>
+          <div class="results__item results__current-limit"></div>
+          <div class="results__item results__password"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="scripts.js"></script>
+</body>
+
+</html>
